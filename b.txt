@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Collections;
+namespace Lab3
+{
+    public class LinkedList<Type> where Type :
+                IEnumerable<Type>
+    {
+        [Serializable]
+        private sealed class Node<Type> where Type :
+            IComparable<Type>, IEquatable<Type>
+        {
+            public Type Data { get; set; }
+            public Node<Type> Link { get; set; }
+            public Node(Type data, Node<Type> link)
+            {
+                Data = data;
+                Link = link;
+            }
+        }
+
+        private Node<Type> head;
+        private Node<Type> tail;
+        private Node<Type> d;
+        public LinkedList()
+        {
+            this.head = null;
+            this.tail = null;
+            this.d = null;
+        }
+        public Type Get()
+        {
+            return d.Data;
+        }
+        public void SetLifo(Type novel)
+        {
+            head = new Node<Type>(novel, head);
+        }
+        public void SetFifo(Type novel)
+        {
+            var dd = new Node<Type>(novel, null);
+            if(head != null)
+            {
+                tail.Link = dd;
+                tail = dd;
+            }
+            else
+            {
+                head = dd;
+                tail = dd;
+            }
+        }
+        public void Sort()
+        {
+            for(Node<Type> d1 = head; d1 != head; d1 = d1.Link)
+            {
+                Node<Type> maxv = d1;
+                for(Node<Type> d2 = d1; d2 != null; d2 = d2.Link)
+                    if(d1.Data.CompareTo(d2.Data) > 1)
+                    {
+                      maxv = d2;
+                    }
+                Type St = d1.Data;
+                d1.Data = maxv.Data;
+                maxv.Data = St;
+            }
+        }
+    }
+}

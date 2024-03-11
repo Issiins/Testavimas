@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace Lab3
+{
+    public class Result : IEquatable<Result>, IComparable<Result>
+    {
+        public Instructor Instructor { get; private set; }
+        public string Group { get;private set; }
+
+        public Result(Instructor instructor, string group)
+        {
+            this.Instructor = instructor;
+            this.Group = group;
+        }
+        public Result(string group)
+        {
+            this.Instructor = null;
+            this.Group = group;
+        }
+        public Result() { }
+        /// <summary>
+        /// A operator overloading of more and less. Compares by group's name
+        /// </summary>
+        /// <param name="left">Left object</param>
+        /// <param name="right">Right object</param>
+        /// <returns>If comparison was successfull</returns>
+        public static bool operator <(Result left, Result right)
+        {
+            int compare = String.Compare(left.Group, right.Group, StringComparison.CurrentCulture);
+            return compare == -1;
+        }
+        public static bool operator >(Result left, Result right)
+        {
+            int compare = String.Compare(left.Group, right.Group, StringComparison.CurrentCulture);
+            return compare > 0;
+        }
+        public int CompareTo(Result other)
+        {
+            if ((object)other == null) return 1;
+            else
+                return Group.CompareTo(other.Group);
+        }
+        public bool Equals(Result other)
+        {
+            if ((object)other == null)
+                return false;
+            if (this.Group == other.Group)
+                return true;
+            else
+                return false;
+        }
+    }
+}

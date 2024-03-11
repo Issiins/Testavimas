@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace Lab3
+{
+    public class Instructor : IComparable<Instructor>, IEquatable<Instructor>
+    {
+        public string ModuleName { get; private set; }
+        public string Surname { get; private set; }
+        public string Name { get; private set; }
+        public int Credits { get; private set; }
+
+        public Instructor(string moduleName, string surname, string name, int credits)
+        {
+            this.ModuleName = moduleName;
+            this.Surname = surname;
+            this.Name = name;
+            this.Credits = credits;
+        }
+        public Instructor() { }
+        /// <summary>
+        /// A operator overloading of more and less. Compares by instructor's credit count and module name
+        /// </summary>
+        /// <param name="lhs">Left object</param>
+        /// <param name="rhs">Right object</param>
+        /// <returns>If comparison was successfull</returns>
+        public static bool operator >(Instructor lhs, Instructor rhs)
+        {   
+            int compare = String.Compare(lhs.ModuleName, rhs.ModuleName, StringComparison.CurrentCulture);
+            return lhs.Credits > rhs.Credits || lhs.Credits == rhs.Credits && compare > 0;
+        }
+        public static bool operator <(Instructor lhs, Instructor rhs)
+        {
+            int compare = String.Compare(lhs.ModuleName, rhs.ModuleName, StringComparison.CurrentCulture);
+            return lhs.Credits < rhs.Credits || lhs.Credits == rhs.Credits && compare > 0;
+        }
+        public int CompareTo(Instructor other)
+        {
+            if ((object)other == null) return 1;
+            if (Name.CompareTo(other.Name) != 0)
+                return Name.CompareTo(other.Name);
+            else
+                return Credits.CompareTo(other.Credits);
+        }
+        public bool Equals(Instructor other)
+        {
+            if ((object)other == null)
+                return false;
+            if (this.Name == other.Name && this.Credits ==
+            other.Credits)
+                return true;
+            else
+                return false;
+        }
+
+    }
+}
