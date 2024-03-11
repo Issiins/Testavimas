@@ -45,6 +45,7 @@ namespace Lab3
                 return Name.CompareTo(other.Name);
             else
                 return Credits.CompareTo(other.Credits);
+            // Ko čia žiuri
         }
         public bool Equals(Instructor other)
         {
