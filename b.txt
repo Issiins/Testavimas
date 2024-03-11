@@ -30,6 +30,7 @@ namespace Lab3
             this.tail = null;
             this.d = null;
         }
+        // Bandau vėl iš naujo
         public Type Get()
         {
             return d.Data;

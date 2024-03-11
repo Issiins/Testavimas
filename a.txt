@@ -47,6 +47,7 @@ namespace Lab3
                 return Credits.CompareTo(other.Credits);
             // Ko čia žiuri
         }
+        // Testavimas
         public bool Equals(Instructor other)
         {
             if ((object)other == null)

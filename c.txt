@@ -21,6 +21,7 @@ namespace Lab3
             this.Instructor = null;
             this.Group = group;
         }
+        // Eina sau 
         public Result() { }
         /// <summary>
         /// A operator overloading of more and less. Compares by group's name
