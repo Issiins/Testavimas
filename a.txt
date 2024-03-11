@@ -9,6 +9,7 @@ namespace Lab3
 {
     public class Instructor : IComparable<Instructor>, IEquatable<Instructor>
     {
+        // Damn
         public string ModuleName { get; private set; }
         public string Surname { get; private set; }
         public string Name { get; private set; }

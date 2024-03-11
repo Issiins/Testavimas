@@ -8,6 +8,7 @@ namespace Lab3
     public class LinkedList<Type> where Type :
                 IEnumerable<Type>
     {
+        // pasizesim
         [Serializable]
         private sealed class Node<Type> where Type :
             IComparable<Type>, IEquatable<Type>
