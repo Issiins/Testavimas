@@ -7,7 +7,8 @@ namespace Lab3
 {
     public class Result : IEquatable<Result>, IComparable<Result>
     {
-        //damn
+        // Geras 
+        //damn 
         public Instrauctor Instructor { get; private set; }
         public string Group { get;private set; }
 
@@ -21,6 +22,7 @@ namespace Lab3
             this.Instructor = null;
             this.Group = group;
         }
+        // Eina sau 
         public Result() { }
         /// <summary>
         /// A operator overloading of more and less. Compares by group's name
