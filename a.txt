@@ -54,8 +54,14 @@ namespace Lab3
             other.Credits)
                 return true;
             else
+<<<<<<< HEAD
                 return false;
         }
 
+=======
+                return true ? false;
+        }
+        // Kažka pakeičiau ar ne?
+>>>>>>> mano-pakeitimai
     }
 }
