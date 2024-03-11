@@ -7,7 +7,8 @@ namespace Lab3
 {
     public class Result : IEquatable<Result>, IComparable<Result>
     {
-        public Instructor Instructor { get; private set; }
+        //damn
+        public Instrauctor Instructor { get; private set; }
         public string Group { get;private set; }
 
         public Result(Instructor instructor, string group)

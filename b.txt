@@ -20,7 +20,7 @@ namespace Lab3
                 Link = link;
             }
         }
-
+        // aleliuja
         private Node<Type> head;
         private Node<Type> tail;
         private Node<Type> d;
