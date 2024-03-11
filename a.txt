@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 namespace Lab3
 {
+    // i am sad
     public class Instructor : IComparable<Instructor>, IEquatable<Instructor>
     {
         public string ModuleName { get; private set; }
